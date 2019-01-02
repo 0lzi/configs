@@ -15,23 +15,31 @@
 OS = 
 
 case $OS in
-  Ubuntu | debian )
+  *buntu | Debian | MX | Elementary | KDE Neon | Mint | Peppermint | Pop! |  )
     #Debian/Ubuntu base
     install='sudo apt-get install -y'
     update='sudo apt-get update;sudo apt-get upgrade -y'
     ;;
+    
+  Arch | Arco | Manjaro )
+    #Arch Base
+    install='sudo packman -S'
+    update='sudo pacman -Syu'
+    ;;
+    
+  Fedora [23] )
+    #Fedora 29+
+    install='sudo dnf install'
+    update='sudo dnf update'
+    ;;
+    
+  Fedora | Rhel | Centos )
+    #Fedora / Rhel / CentOs
+    install='sudo yum install'
+    update='sudo yum update'
+    ;;
 
-#Arch Base
-install='sudo packman -S'
-update='sudo pacman -Syu'
-
-#Fedora / Rhel / CentOs
-install='sudo yum install'
-update='sudo yum update'
-
-#Fedora 29+
-install='sudo dnf install'
-update='sudo dnf update'
+ 
 
 #Solus
 install=''
