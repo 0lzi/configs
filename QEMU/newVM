@@ -1,0 +1,22 @@
+#Script to spin up different spec VM's quickly 
+
+
+# name
+#get name for VM
+
+#cpu / vcpu ( 1-8 )
+
+#ram ( 512 - 8192 )
+
+#create new disk ( Y - N)
+
+    #yes
+
+    #no - select snapshot or vhd to spin up from
+
+#disk size ( 5GB-20GB )
+
+#where to store vm img/vdi/vhd
+
+#
+
