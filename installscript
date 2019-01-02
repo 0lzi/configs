@@ -1,12 +1,48 @@
 #! /bin/bash
 
-# Modified Dasgeeks AutinstallBashScrips/installscript 
+#Version 0.01 - Work In Progress
+# Modified Dasgeeks AutoinstallBashScrips/installscript 
 # https://github.com/dasgeekchannel/AutoInstallBashScripts/blob/master/installscript
 
-install='sudo apt-get install -y'
-update='sudo apt-get update;sudo apt-get upgrade -y'
+#Determin Package installer and select appropriate install/update variable
 
-#list of applications to install
+#Run something to get distro / base then search string for 
+#try below
+# https://unix.stackexchange.com/questions/6345/how-can-i-get-distribution-name-and-version-number-in-a-simple-shell-script
+#lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om
+#spin up VM for each type of distro and get output 
+
+OS = 
+
+case $OS in
+  Ubuntu | debian )
+    #Debian/Ubuntu base
+    install='sudo apt-get install -y'
+    update='sudo apt-get update;sudo apt-get upgrade -y'
+    ;;
+
+#Arch Base
+install='sudo packman -S'
+update='sudo pacman -Syu'
+
+#Fedora / Rhel / CentOs
+install='sudo yum install'
+update='sudo yum update'
+
+#Fedora 29+
+install='sudo dnf install'
+update='sudo dnf update'
+
+#Solus
+install=''
+update=''
+
+#Slack / Suse base
+install='sudo zypper install'
+update='sudo zypper update'
+
+
+#List of common applications to install. 
 # Git
 # Chrome
 # Steam
@@ -32,4 +68,4 @@ update='sudo apt-get update;sudo apt-get upgrade -y'
 #
 #
 #
-#
+#Application Groups to install 
