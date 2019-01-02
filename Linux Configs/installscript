@@ -12,8 +12,12 @@
 #lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om
 #spin up VM for each type of distro and get output 
 
-OS = 
+OS = 'lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om'
 #
+
+install=""
+
+while [ $install = "" ]; do
 
 case $OS in
   *buntu | Debian | MX | Elementary | KDE Neon | Mint | Peppermint | Pop! |  )
@@ -51,9 +55,9 @@ case $OS in
   update='sudo eopkg upgrade'
   ;;
  
- Slack | Open | Suse
+ Slack | Open | Suse )
   #Slack / Suse base
-  echo "zypper package manager"
+  echo " zypper package manager"
   install='sudo zypper install'
   update='sudo zypper update'
   ;;
@@ -61,9 +65,12 @@ case $OS in
 *)
 echo "Please type OS base e.g. Debian , Ubuntu , Fedora "
 read OS
+install=$OS
 ;;
 
 esac
+
+done
 
 #Snap install
 installsn='sudo snap install'
