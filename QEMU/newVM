@@ -1,5 +1,5 @@
 #Script to spin up different spec VM's quickly 
-
+#virt-install
 
 # name
 #get name for VM
@@ -14,9 +14,25 @@
 
     #no - select snapshot or vhd to spin up from
 
+    # virt-install \
+    # --name demo
+    # --ram 512
+    # --disk /home/user/VMs/mydisk.img
+    # --import
+
 #disk size ( 5GB-20GB )
 
 #where to store vm img/vdi/vhd
 
-#
+# https://linux.die.net/man/1/virt-install
+# Example
+# virt-install \
+#     --connect qemu:///system \
+#     --virt-type kvm \
+#     --name demo \
+#     --ram 500 \
+#     --disk path=/var/lib/libvirt/images/demo.img,size=8 \
+#     --graphics vnc \
+#     --cdrom /root/fedora7live.iso
+#     --os-variant fedora13
 
