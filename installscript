@@ -13,44 +13,63 @@
 #spin up VM for each type of distro and get output 
 
 OS = 
+#
 
 case $OS in
   *buntu | Debian | MX | Elementary | KDE Neon | Mint | Peppermint | Pop! |  )
     #Debian/Ubuntu base
-    install='sudo apt-get install -y'
+    echo " APT package manager "
+    install='sudo apt-get install -y' 
     update='sudo apt-get update;sudo apt-get upgrade -y'
     ;;
     
   Arch | Arco | Manjaro )
     #Arch Base
+    echo " pacman package manager "
     install='sudo packman -S'
     update='sudo pacman -Syu'
     ;;
     
   Fedora [23] )
     #Fedora 29+
+    echo " DNF package manager "
     install='sudo dnf install'
     update='sudo dnf update'
     ;;
     
   Fedora | Rhel | Centos )
+    echo " YUM package manager"
     #Fedora / Rhel / CentOs
     install='sudo yum install'
     update='sudo yum update'
     ;;
-
  
+ Solus )
+  #Solus
+  echo " eopkg package manager"
+  install='sudo eopkg install'
+  update='sudo eopkg upgrade'
+  ;;
+ 
+ Slack | Open | Suse
+  #Slack / Suse base
+  echo "zypper package manager"
+  install='sudo zypper install'
+  update='sudo zypper update'
+  ;;
 
-#Solus
-install=''
-update=''
+*)
+echo "Please type OS base e.g. Debian , Ubuntu , Fedora "
+read OS
+;;
 
-#Slack / Suse base
-install='sudo zypper install'
-update='sudo zypper update'
+esac
 
+#Snap install
+installsn='sudo snap install'
 
 #List of common applications to install. 
+# Snapd 
 # Git
 # Chrome
 # Steam
