@@ -34,16 +34,22 @@ vmRAM="--ram $ram \"
 #create new disk ( Y - N)
 echo "Create new Disk ? y/n :  "
 read disk
+    #yes
     if [$disk="y || yes]
-
     
     #disk size ( 5GB-20GB )
     echo "Disk size ( default=5GB , Recommended 10GB , Max =$maxDisk"
-    #yes
+
 
 
     #no - select snapshot or vhd to spin up from
     #disk path variable = /home/vms?
+    $vmDiskpath=""
+    #diag text 
+#    vmDiskpath=$(dialog --stdout --title "Please choose a file" --fselect $HOME/ 14 48)
+#echo "${FILE} file chosen."
+
+#check file is .vdi / img / 
     # ls path and index [0-99] select file
     # --import ? 
   
@@ -67,5 +73,5 @@ virt-install \
 
 #String for VM Provisioning
 
-Provisioning=$install+$vmName+$vmVCPU+$vmRAM
+Provisioning=$install+$vmName+$vmVCPU+$vmRAM+$vmDiskpath
 
