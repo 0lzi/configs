@@ -8,37 +8,49 @@ install="--connect qemu:///system \"
 #get name for VM
 echo "VM name?"
 read name
+vmName="--name $name \" 
+
 
 #cpu / vcpu ( 1-8 )
 echo "How many CPU ? (Default 1)"
-read CPU
-if [$CPU==""]
+read vcpu
+    if [$vcpu==""]
     then
-        CPU="1"
-fi
+        vcpu="1"
+    fi
+vmVCPU="--vcpus= $vcpu \"
+
 
 #ram ( 512 - 8192 )
+
 echo "How Much RAM ? (Default 512)
-read ram
+    if [$ram==""]
+    then
+        ram="512"
+    fi
+vmRAM="--ram $ram \"
+
 
 #create new disk ( Y - N)
+echo "Create new Disk ? y/n :  "
+read disk
+    if [$disk="y || yes]
 
+    
+    #disk size ( 5GB-20GB )
+    echo "Disk size ( default=5GB , Recommended 10GB , Max =$maxDisk"
     #yes
 
+
     #no - select snapshot or vhd to spin up from
-
-    # virt-install \
-    # --connect qemu:///system
-    # --name demo
-    # --ram 512
-    # --disk /home/olzi/VirtualBox VMs/mydisk.img
-    # --import
-
-#disk size ( 5GB-20GB )
+    #disk path variable = /home/vms?
+    # ls path and index [0-99] select file
+    # --import ? 
+  
 
 #where to store vm img/vdi/vhd
 
-
+#Installation Media ( iso or download , search iso folder )
 
 # Example
 virt-install \
@@ -55,5 +67,5 @@ virt-install \
 
 #String for VM Provisioning
 
-Provisioning=
+Provisioning=$install+$vmName+$vmVCPU+$vmRAM
 
