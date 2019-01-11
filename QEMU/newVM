@@ -15,24 +15,30 @@
     #no - select snapshot or vhd to spin up from
 
     # virt-install \
+    # --connect qemu:///system
     # --name demo
     # --ram 512
-    # --disk /home/user/VMs/mydisk.img
+    # --disk /home/olzi/VirtualBox VMs/mydisk.img
     # --import
 
 #disk size ( 5GB-20GB )
 
 #where to store vm img/vdi/vhd
 
-# https://linux.die.net/man/1/virt-install
+
+
 # Example
-# virt-install \
-#     --connect qemu:///system \
-#     --virt-type kvm \
-#     --name demo \
-#     --ram 500 \
-#     --disk path=/var/lib/libvirt/images/demo.img,size=8 \
-#     --graphics vnc \
-#     --cdrom /root/fedora7live.iso
-#     --os-variant fedora13
+virt-install \
+    --connect qemu:///system \
+    --virt-type kvm \
+    --name demo \
+    --ram 500 \
+    --graphics vnc \
+    --os-variant ubuntu18.04 \
+    --disk path=/home/olzi/VirtualBoxVMs/test.img,size=10 \
+    --cdrom /home/olzi/Downloads/ubuntu-18.04.1-desktop-amd64.iso
+
+
+
+
 
