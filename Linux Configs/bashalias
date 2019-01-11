@@ -2,4 +2,4 @@
 alias bye='echo bye && sudo systemctl suspend'
 alias cpuwatch='watch -n 1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
 alias untar='tar -zxvf '
-alais sshkeygen2048 = 'ssh-keygen -t rsa -b 2048'
+alias sshkeygen2048 ='ssh-keygen -t rsa -b 2048'
