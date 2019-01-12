@@ -42,7 +42,7 @@ read disk
 
 
 
-    #no - select snapshot or vhd to spin up from
+    #no - select snapshot or vhd to spin up from ( virt-clone or virt-sysprep )
     #disk path variable = /home/vms?
     $vmDiskpath=""
     #diag text 
