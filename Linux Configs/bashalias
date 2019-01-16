@@ -5,14 +5,17 @@
 
 #Custom Alias
 #alias bye='echo bye && sudo systemctl suspend'
-#alias cpuwatch='watch -n 1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""'
+#alias cpuwatch='watch -n 1 grep MHz /proc/cpuinfo'
 #alias untar='tar -zxvf '
 #alias new2048key ='ssh-keygen -t rsa -b 2048'
+
+
+
 
 #WorkInProgress
 echo "#Custom Alias " >> ~/.bashrc
 echo "alias bye='echo bye && sudo systemctl suspend'" >> ~/.bashrc
-echo 'alias cpuwatch=''watch -n 1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\""' '>> ~/.bashrc
+echo "alias cpuwatch='watch -n 1 grep MHz /proc/cpuinfo'" >> ~/.bashrc
 echo "alias untar='tar -zxvf ' " >> ~/.bashrc
 echo "alias new2048key='ssh-keygen -t rsa -b 2048'" >> ~/.bashrc
 
