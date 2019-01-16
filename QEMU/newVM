@@ -1,3 +1,6 @@
+#! /bin/bash
+
+#Version 0.01 - Work In Progress
 #Script to spin up different spec VM's quickly 
 #virt-install
 #Created-by Oliver Kelly
