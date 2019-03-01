@@ -34,8 +34,8 @@ case $OS in
     update='sudo pacman -Syu'
     ;;
     
-  Fedora [23] )
-    #Fedora 29+
+  Fedora [3*] )
+    #Fedora 30+
     echo " DNF package manager "
     install='sudo dnf install'
     update='sudo dnf update'
