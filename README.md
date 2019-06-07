@@ -4,4 +4,5 @@ Personal Scripts and configs for Linux, intended ease of distro hopping includin
 # QEMU - Virt-Manager Scripts
 Scripts for spinning up Virtual Machines 
 
-#
+# Counterstrike GO (CS:GO)
+My CS:GO config and autoexec 
