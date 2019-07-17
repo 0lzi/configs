@@ -24,7 +24,8 @@ echo "Do you want the Mint-X ?  y / n "
 echo " y / n "
 read input
 
-if ["$input" -eq y ] || ["$input" -eq Y ]
+if ["$input" -eq y ] || ["$input" -eq Y ];
+        then
         git clone https://github.com/linuxmint/mint-x-icons.git
         sudo cp -r mint-x-icons/usr/share/icons/* /usr/share/icons
         sudo cp -r user/share/themes/Linux Mint /usr/share/themes 
@@ -36,7 +37,8 @@ echo "Do you want the Mint-Y ?  y / n "
 echo " y / n "
 read input
 
-if ["$input" -eq y ] || ["$input" -eq Y ]
+if ["$input" -eq y ] || ["$input" -eq Y ];
+        then
         git clone https://github.com/linuxmint/mint-y-icons.git
         sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
         sudo cp -r user/share/themes/Linux Mint /usr/share/themes 
