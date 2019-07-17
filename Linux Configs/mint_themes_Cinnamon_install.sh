@@ -26,7 +26,7 @@ read input
 if [ "$input" != "${input#[yY]}" ] ; then
         git clone https://github.com/linuxmint/mint-x-icons.git
         sudo cp -r mint-x-icons/usr/share/icons/* /usr/share/icons
-        sudo cp -r usr/share/themes/Linux Mint /usr/share/themes 
+        sudo cp -r usr/share/themes/Linux\ Mint /usr/share/themes 
         sudo cp -r usr/share/themes/Mint-X* /usr/share/themes
 fi       
 
@@ -37,7 +37,7 @@ read input
 if [ "$input" != "${input#[yY]}" ] ; then
         git clone https://github.com/linuxmint/mint-y-icons.git
         sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
-        sudo cp -r usr/share/themes/Linux Mint /usr/share/themes 
+        sudo cp -r usr/share/themes/Linux\ Mint /usr/share/themes 
         sudo cp -r usr/share/themes/Mint-Y* /usr/share/themes
 fi
 
