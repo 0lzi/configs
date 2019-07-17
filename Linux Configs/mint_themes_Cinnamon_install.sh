@@ -16,9 +16,6 @@ cd /tmp/mint-themes
 # Generate the theme files
 make
 
-# Copy the files to the system themes folder
-sudo cp -r usr/share/themes/* /usr/share/themes
-
 #Install Mint-X
 echo -n "Do you want the Mint-X ? (y / n) " 
 read input
