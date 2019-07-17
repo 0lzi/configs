@@ -20,29 +20,28 @@ make
 #sudo cp -r usr/share/themes/* /usr/share/themes
 
 #Install Mint-X
-echo "Do you want the Mint-X ?  y / n " 
-echo " y / n "
+echo -n "Do you want the Mint-X ? (y / n) " 
 read input
 
-if ["$input" -eq y ] || ["$input" -eq Y ];
-        then
+if ["$input" != "${input#[yY]}" ] ; then
         git clone https://github.com/linuxmint/mint-x-icons.git
         sudo cp -r mint-x-icons/usr/share/icons/* /usr/share/icons
         sudo cp -r user/share/themes/Linux Mint /usr/share/themes 
-        sudo cp -r usr/share/themes/Mint-X* /usr/share/themes        
+        sudo cp -r usr/share/themes/Mint-X* /usr/share/themes
+        else
+        
 fi       
 
 #Install Mint-Y
-echo "Do you want the Mint-Y ?  y / n " 
-echo " y / n "
+echo -n "Do you want the Mint-Y ? (y / n) " 
 read input
 
-if ["$input" -eq y ] || ["$input" -eq Y ];
-        then
+if ["$input" != "${input#[yY]}" ] ; then
         git clone https://github.com/linuxmint/mint-y-icons.git
         sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
         sudo cp -r user/share/themes/Linux Mint /usr/share/themes 
         sudo cp -r usr/share/themes/Mint-Y* /usr/share/themes
+        else
 fi
 
 
