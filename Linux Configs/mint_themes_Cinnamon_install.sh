@@ -14,14 +14,14 @@ case $OS in
   *buntu | debian |Debian | MX | Elementary | mint | Mint | Peppermint | Pop! )
     #Debian/Ubuntu base
     echo " APT package manager "
-    install='sudo apt-get install'
+    install='sudo apt-get install git make ruby-sass -y'
     
     ;;
     
   Arch | Arco | Manjaro )
     #Arch Base
     echo " pacman package manager "
-    install='sudo pacman -S'
+    install='sudo pacman -S git make ruby-sass -y'
 
     
     ;;
@@ -29,7 +29,7 @@ case $OS in
   'Fedora release 30 (Thirty)' )
     #Fedora 30+
     echo " DNF package manager "
-    install='sudo dnf install'
+    install='sudo dnf install git make ruby-sass -y'
    
 
     ;;
@@ -37,21 +37,21 @@ case $OS in
   Rhel | Centos )
     echo " YUM package manager"
     #Fedora / Rhel / CentOs
-    install='sudo yum install'
+    install='sudo yum install git make ruby-sass -y'
 
     ;;
  
  Solus )
   #Solus
     echo " eopkg package manager"
-    install='sudo eopkg install'
+    install='sudo eopkg install git make ruby-sass -y'
 
   ;;
  
  Slack | Open | Suse )
   #Slack / Suse base
   echo " zypper package manager"
-  sudo zypper install git make ruby-sass -y
+  install='sudo zypper install git make ruby-sass -y'
 
   ;;
 
@@ -65,7 +65,7 @@ esac
 done
 
 # Install required packages
-$install git make ruby-sass -y
+$install 
 #sudo apt-get install git make ruby-sass -y
 
 # Keep all the stuff together
