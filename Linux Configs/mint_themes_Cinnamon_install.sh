@@ -10,7 +10,7 @@ sudo apt-get install git make ruby-sass -y
 rm -rf /tmp/mint-themes
 
 # Clone the repository
-#git clone https://github.com/linuxmint/mint-themes.git /tmp/mint-themes
+git clone https://github.com/linuxmint/mint-themes.git /tmp/mint-themes
 cd /tmp/mint-themes
 
 # Generate the theme files
