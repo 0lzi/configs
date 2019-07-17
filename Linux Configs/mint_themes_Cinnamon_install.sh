@@ -8,40 +8,43 @@ OS=lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || un
 
 install=""
 
-while [ $install = "" ]; do
+while [ "$install" == "" ]; do
 
 case $OS in
-  *buntu | Debian | MX | Elementary | KDE Neon | Mint | Peppermint | Pop! |  )
+  *buntu | debian |Debian | MX | Elementary | mint | Mint | Peppermint | Pop! )
     #Debian/Ubuntu base
     echo " APT package manager "
-    sudo apt-get install git make ruby-sass -y
+    install='sudo apt-get install'
+    
     ;;
     
   Arch | Arco | Manjaro )
     #Arch Base
     echo " pacman package manager "
-    sudo packman -S git make ruby-sass -y
+    install='sudo pacman -S'
+
     
     ;;
     
-  Fedora [3*] )
+  'Fedora release 30 (Thirty)' )
     #Fedora 30+
     echo " DNF package manager "
-    sudo dnf install git make ruby-sass -y
+    install='sudo dnf install'
+   
 
     ;;
     
-  Fedora | Rhel | Centos )
+  Rhel | Centos )
     echo " YUM package manager"
     #Fedora / Rhel / CentOs
-    sudo yum install git make ruby-sass -y
+    install='sudo yum install'
 
     ;;
  
  Solus )
   #Solus
-  echo " eopkg package manager"
-  sudo eopkg install git make ruby-sass -y
+    echo " eopkg package manager"
+    install='sudo eopkg install'
 
   ;;
  
@@ -62,7 +65,8 @@ esac
 done
 
 # Install required packages
-sudo apt-get install git make ruby-sass -y
+$install git make ruby-sass -y
+#sudo apt-get install git make ruby-sass -y
 
 # Keep all the stuff together
 rm -rf /tmp/mint-themes
