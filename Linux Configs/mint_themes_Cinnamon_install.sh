@@ -3,7 +3,6 @@
 #Version 0.01 - Work In Progress
 #Forked from https://gist.github.com/esa1975/495591ca78af070c8228f4ce7a077486 to create a script compatible with any Cinnmon install.
 #OS Check
-OS=lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om
 #
 
 install=""
@@ -11,48 +10,40 @@ install=""
 while [ "$install" == "" ]; do
 
 case $OS in
-  *buntu | debian |Debian | MX | Elementary | mint | Mint | Peppermint | Pop! )
+  *buntu | debian |Debian | MX | mx| elementary |Elementary | mint | Mint | Peppermint | Pop! )
     #Debian/Ubuntu base
     echo " APT package manager "
     install='sudo apt-get install git make ruby-sass -y'
-    
     ;;
     
-  Arch | Arco | Manjaro )
+  Arch | arch | Arco | manjaro |Manjaro )
     #Arch Base
     echo " pacman package manager "
     install='sudo pacman -S git make ruby-sass -y'
-
-    
     ;;
     
-  Fedora* )
+    Fedora* | fedora* )
     #Fedora 30+
     echo " DNF package manager "
     install='sudo dnf install git make ruby-sass -y'
-   
-
     ;;
     
-  Rhel | Centos )
+  Rhel | rel | centos | Centos )
     echo " YUM package manager"
     #Fedora / Rhel / CentOs
     install='sudo yum install git make ruby-sass -y'
-
     ;;
  
  Solus )
   #Solus
     echo " eopkg package manager"
     install='sudo eopkg install git make ruby-sass -y'
-
-  ;;
+    ;;
  
- Slack | Open | Suse )
+ Slack| slack | *suse | *Suse )
   #Slack / Suse base
   echo " zypper package manager"
   install='sudo zypper install git make ruby-sass -y'
-
   ;;
 
 *)
