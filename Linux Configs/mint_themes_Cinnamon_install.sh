@@ -19,28 +19,35 @@ make
 # Copy the files to the system themes folder
 sudo cp -r usr/share/themes/* /usr/share/themes
 
-#Mint X or Mint Y or both
-echo "Do you want the Mint-X or Mint-Y themes or Both?"
-echo " x / y / b "
+#Install Mint-X
+echo "Do you want the Mint-X ?  y / n " 
+echo " y / n "
 read input
 
-if [$input=="x || X"]
+if [$input==" y || Y"]
   then
         git clone https://github.com/linuxmint/mint-x-icons.git
         sudo cp -r mint-x-icons/usr/share/icons/* /usr/share/icons
-elif [$input=="y || Y"]
+      
+   else
+     
+fi       
+
+#Install Mint-Y
+echo "Do you want the Mint-Y ?  y / n " 
+echo " y / n "
+read input
+
+if [$input==" y || Y"]
   then
         git clone https://github.com/linuxmint/mint-y-icons.git
-        sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
-elif [$input=="b || B"]
-  then
-        git clone https://github.com/linuxmint/mint-x-icons.git
-        git clone https://github.com/linuxmint/mint-y-icons.git
-        sudo cp -r mint-x-icons/usr/share/icons/* /usr/share/icons
-        sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
-  else
-     echo "nothing to do here"
-fi
+         sudo cp -r mint-y-icons/usr/share/icons/* /usr/share/icons
+      
+   else
+     
+fi  
+
+
 
 
 #Cleanup
