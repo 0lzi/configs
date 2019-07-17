@@ -26,7 +26,7 @@ case $OS in
     
     ;;
     
-  'Fedora release 30 (Thirty)' )
+  Fedora* )
     #Fedora 30+
     echo " DNF package manager "
     install='sudo dnf install git make ruby-sass -y'
