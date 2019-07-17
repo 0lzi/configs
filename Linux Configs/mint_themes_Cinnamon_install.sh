@@ -2,6 +2,64 @@
 
 #Version 0.01 - Work In Progress
 #Forked from https://gist.github.com/esa1975/495591ca78af070c8228f4ce7a077486 to create a script compatible with any Cinnmon install.
+#OS Check
+OS = 'lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om'
+#
+
+install=""
+
+while [ $install = "" ]; do
+
+case $OS in
+  *buntu | Debian | MX | Elementary | KDE Neon | Mint | Peppermint | Pop! |  )
+    #Debian/Ubuntu base
+    echo " APT package manager "
+    sudo apt-get install git make ruby-sass -y
+    ;;
+    
+  Arch | Arco | Manjaro )
+    #Arch Base
+    echo " pacman package manager "
+    sudo packman -S git make ruby-sass -y
+    
+    ;;
+    
+  Fedora [3*] )
+    #Fedora 30+
+    echo " DNF package manager "
+    sudo dnf install git make ruby-sass -y
+
+    ;;
+    
+  Fedora | Rhel | Centos )
+    echo " YUM package manager"
+    #Fedora / Rhel / CentOs
+    sudo yum install git make ruby-sass -y
+
+    ;;
+ 
+ Solus )
+  #Solus
+  echo " eopkg package manager"
+  sudo eopkg install git make ruby-sass -y
+
+  ;;
+ 
+ Slack | Open | Suse )
+  #Slack / Suse base
+  echo " zypper package manager"
+  sudo zypper install git make ruby-sass -y
+
+  ;;
+
+*)
+echo "Please type OS base e.g. Debian , Ubuntu , Fedora "
+read OS
+;;
+
+esac
+
+done
 
 # Install required packages
 sudo apt-get install git make ruby-sass -y
