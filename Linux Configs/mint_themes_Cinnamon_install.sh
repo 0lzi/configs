@@ -3,7 +3,7 @@
 #Version 0.01 - Work In Progress
 #Forked from https://gist.github.com/esa1975/495591ca78af070c8228f4ce7a077486 to create a script compatible with any Cinnmon install.
 #OS Check
-OS = 'lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om'
+OS=lsb_release -ds 2>/dev/null || cat /etc/*release 2>/dev/null | head -n1 || uname -om
 #
 
 install=""
