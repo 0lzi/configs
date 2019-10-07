@@ -1,1 +1,1 @@
--novid -nojoy -w 1920 -h 1080 -refresh 120 -threads 12 -fullscreeen -freq 120
+-novid -nojoy -w 1920 -h 1080 -refresh 120 -threads 12 -fullscreeen -freq 120 -tickrate 128
