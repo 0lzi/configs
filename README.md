@@ -9,3 +9,4 @@ My CS:GO config and autoexec
 
 # OBS - Proifiles / Scenes
 
+# Docker configs and dockerfiles
