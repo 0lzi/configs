@@ -30,7 +30,8 @@ services:
     networks:
 
       - docker-network
-
+      
+    restart: always
 
 networks:
 
