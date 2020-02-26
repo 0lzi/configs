@@ -10,5 +10,5 @@ My CS:GO config and autoexec
 # OBS - Profiles / Scenes
 Place to store 
 
-# Docker configs and dockerfiles
+# Docker configs and dockerfiles/compose
 Place to store my docker configs 
