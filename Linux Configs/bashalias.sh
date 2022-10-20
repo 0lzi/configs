@@ -3,12 +3,17 @@
 #Version 0.01 - Work In Progress
 #Script to append custom alias' to bashrc
 
+#Export
+#export PIPASS=supersecretpassword
+#export MYPASS=supersecretpassword
+
 #Custom Alias
 #alias bye='echo bye && sudo systemctl suspend'
 #alias cpuwatch='watch -n 1 grep MHz /proc/cpuinfo'
 #alias untar='tar -zxvf '
 #alias new2048key ='ssh-keygen -t rsa -b 2048'
-
+#alias konect ="sshpass -p $MYPASS ssh"
+#alias konectpi ="sshpass -p $PIPASS ssh"
 
 
 
@@ -19,4 +24,6 @@ echo "alias cpuwatch='watch -n 1 grep MHz /proc/cpuinfo'" >> ~/.bashrc
 echo "alias untar='tar -zxvf ' " >> ~/.bashrc
 echo "alias new2048key='ssh-keygen -t rsa -b 2048'" >> ~/.bashrc
 echo "alias diskuseage='sudo baobab'" >> ~/.bashrc
+echo "alias konect ="sshpass -p $MYPASS ssh"" >> ~/.bashrc
+echo "alias konectpi ="sshpass -p $PIPASS ssh"" >> ~/.bashrc
 
