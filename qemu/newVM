@@ -1,0 +1,80 @@
+#! /bin/bash
+
+#Version 0.01 - Work In Progress
+#Script to spin up different spec VM's quickly 
+#virt-install
+#Created-by Oliver Kelly
+
+install="--connect qemu:///system \"
+
+# name
+#get name for VM
+echo "VM name?"
+read name
+vmName="--name $name \" 
+
+
+#cpu / vcpu ( 1-8 )
+echo "How many CPU ? (Default 1)"
+read vcpu
+    if [$vcpu==""]
+    then
+        vcpu="1"
+    fi
+vmVCPU="--vcpus= $vcpu \"
+
+
+#ram ( 512 - 8192 )
+
+echo "How Much RAM ? (Default 512)
+    if [$ram==""]
+    then
+        ram="512"
+    fi
+vmRAM="--ram $ram \"
+
+
+#create new disk ( Y - N)
+echo "Create new Disk ? y/n :  "
+read disk
+    #yes
+    if [$disk="y || yes]
+    
+    #disk size ( 5GB-20GB )
+    echo "Disk size ( default=5GB , Recommended 10GB , Max =$maxDisk"
+
+
+
+    #no - select snapshot or vhd to spin up from ( virt-clone or virt-sysprep )
+    #disk path variable = /home/vms?
+    $vmDiskpath=""
+    #diag text 
+#    vmDiskpath=$(dialog --stdout --title "Please choose a file" --fselect $HOME/ 14 48)
+#echo "${FILE} file chosen."
+
+#check file is .vdi / img / 
+    # ls path and index [0-99] select file
+    # --import ? 
+  
+
+#where to store vm img/vdi/vhd
+
+#Installation Media ( iso or download , search iso folder )
+
+# Example
+virt-install \
+    --connect qemu:///system \
+    --virt-type kvm \
+    --name demo \
+    --ram 500 \
+    --graphics vnc \
+    --os-variant ubuntu18.04 \
+    --disk path=/home/olzi/VirtualBoxVMs/test.img,size=10 \
+    --cdrom /home/olzi/Downloads/ubuntu-18.04.1-desktop-amd64.iso
+
+
+
+#String for VM Provisioning
+
+Provisioning=$install+$vmName+$vmVCPU+$vmRAM+$vmDiskpath
+
